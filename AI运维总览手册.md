@@ -6,7 +6,7 @@
 
 ## 0. 一句话定位
 
-一个 **162 题**的职业性格测评 Web 系统，覆盖 **MBTI + 大五(Big5) + PDP + DISC + 九型人格** 五大体系，自动生成个性化报告与岗位匹配，数据存入 **Supabase** 云数据库，前端由 **CloudStudio** 静态托管。当前用于「云川省示例集团养老服务有限公司」员工测评。
+一个 **162 题**的职业性格测评 Web 系统，覆盖 **MBTI + 大五(Big5) + PDP + DISC + 九型人格** 五大体系，自动生成个性化报告与岗位匹配，数据存入 **Supabase** 云数据库，前端由 **CloudStudio** 静态托管。当前用于「示例养老服务有限公司」员工测评。
 
 ---
 
@@ -37,12 +37,12 @@
 ## 3. 三重环境总览
 
 ### 3.1 本地（开发者机器）
-- **项目根目录**：`C:\Users\intpj\Desktop\project`（即本仓库工作区）
-- **部署历史/链接注册表**：`C:\Users\intpj\.workbuddy\cloudstudio-deploy-history\`
+- **项目根目录**：`<项目工作区>`（即本仓库工作区）
+- **部署历史/链接注册表**：`<用户目录>\.workbuddy\cloudstudio-deploy-history\`
   - 每次部署一个 JSON 记录（含 `deployTargetId`、`sandboxId`、`conversationId`、`shareLink`）
   - `unpublish-records/`：被下架（取消发布）的链接记录
   - `_revive-backup-20260825/`：复活旧链接时的备份
-- **Node 运行时**：优先用 WorkBuddy 管理的 `C:\Users\intpj\.workbuddy\binaries\node\versions\22.22.2\node.exe`
+- **Node 运行时**：优先用 WorkBuddy 管理的 `<用户目录>\.workbuddy\binaries\node\versions\22.22.2\node.exe`
 - **构建产物目录**：`dist/`（长期存活沙箱 `b8dd489c` 的来源）、`.deploy-build-4`（旧链接 `a0c3e70b`）、`.deploy-build-5`（曾用于 `db49f0a2`），均为同一份代码的部署快照。
 
 ### 3.2 云端（对外服务）
@@ -207,7 +207,7 @@ f434c99 导出表改 ExcelJS 自带排版
 
 ### 11.1 本地构建
 ```bash
-cd C:\Users\intpj\Desktop\project
+cd <项目工作区>
 rm -rf dist && npx vite build --outDir dist   # 用 WorkBuddy 管理的 node 22
 # 产物含 _redirects（若缺失从 .deploy-build-2 拷贝）
 ```
@@ -277,7 +277,7 @@ env -u HTTP_PROXY -u HTTPS_PROXY -u http_proxy -u https_proxy git push origin ma
 
 ## 15. 标准交接 Prompt（复制给未来 AI 即可接管）
 
-> 你从现在起全权负责「示例集团员工职业性格测评系统」的运维。项目在 GitHub 私有仓库 `git@github.com:intp41455/career-personality-assessment.git`（分支 main），本地工作区 `C:\Users\intpj\Desktop\project`。技术栈：Vite 多页纯前端 + Supabase(PostgreSQL, ref `zknmsszhupuvhtnkzwoo`) + CloudStudio 静态托管。详见随附的《AI运维总览手册.md》(同一目录)。请先 `git clone` 并通读手册，重点记住：**更新部署必须同目录重部署、绝不下架链接**（否则用户 localStorage 失联）；已修复 P0 `saved` 作用域崩溃；当前有第 9 节 7 项待修 Bug 与第 12 节 3 项遗留任务待处理。后续所有代码修改、Bug 修复、部署、数据恢复、用户咨询均由你独立完成并自审，重大变更先小额提交再推送。
+> 你从现在起全权负责「示例集团员工职业性格测评系统」的运维。项目在 GitHub 私有仓库 `git@github.com:intp41455/career-personality-assessment.git`（分支 main），本地工作区 `<项目工作区>`。技术栈：Vite 多页纯前端 + Supabase(PostgreSQL, ref `zknmsszhupuvhtnkzwoo`) + CloudStudio 静态托管。详见随附的《AI运维总览手册.md》(同一目录)。请先 `git clone` 并通读手册，重点记住：**更新部署必须同目录重部署、绝不下架链接**（否则用户 localStorage 失联）；已修复 P0 `saved` 作用域崩溃；当前有第 9 节 7 项待修 Bug 与第 12 节 3 项遗留任务待处理。后续所有代码修改、Bug 修复、部署、数据恢复、用户咨询均由你独立完成并自审，重大变更先小额提交再推送。
 
 ---
 
